@@ -1,4 +1,4 @@
-
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +15,15 @@ public class Main {
 
         System.out.println("All listings by Agent 3: ");
         HomeListing.getListingByAgent(3);
-
+        try {
+            ClientDAO client = new ClientDAO(DatabaseConnection.getConnection());
+            client.addClient();
+            client.updateClient();
+            client.listClients();
+            client.deleteClient();
+        } catch (SQLException sqle) {
+            System.out.println("Error in ClientDAO");
+            System.out.println(sqle.getMessage());
+        }
     }
 }
