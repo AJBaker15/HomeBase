@@ -84,7 +84,7 @@ public class ViewingsDAO {
         }
     }
 
-    // List all viewings
+    // List all viewings - may need to format this a little better.
     public void listAllViewings() throws SQLException {
         String sql = "SELECT * FROM Viewing";
         Statement stmt = conn.createStatement();
