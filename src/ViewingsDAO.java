@@ -10,7 +10,7 @@ public class ViewingsDAO {
     }
 
     // Add a new viewing
-    public void addViewing() throws SQLException {
+    public void add() throws SQLException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Viewing ID:");
         int id = sc.nextInt(); sc.nextLine();
@@ -27,9 +27,9 @@ public class ViewingsDAO {
         System.out.println("Enter Client ID:");
         int clientVID = sc.nextInt(); sc.nextLine();
 
-        System.out.println("Enter Date of Viewing (YY-MM-DD): ");
-        Date vDate = new Date(sc.nextLong());
-
+        System.out.println("Enter Date of Viewing (YYYY-MM-DD):");
+        String dateStr = sc.nextLine();
+        Date vDate = Date.valueOf(dateStr);
 
         String sql = "INSERT INTO Viewing VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -41,33 +41,34 @@ public class ViewingsDAO {
         stmt.setDate(6, vDate);
         stmt.executeUpdate();
 
-        System.out.println("Viewing added successfully!");
+        System.out.println("🍻 Viewing added successfully!");
     }
 
     // Update viewing's date
-    public void updateViewing() throws SQLException {
+    public void update() throws SQLException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Viewing ID to update:");
-        int id = sc.nextInt();
+        int id = sc.nextInt(); sc.nextLine();
 
-        System.out.println("Enter new Date (YY-MM-DD): ");
-        Date newVDate = new Date(sc.nextInt());
+        System.out.println("Enter new Date (YYYY-MM-DD):");
+        String dateStr = sc.nextLine();
+        Date newVDate = Date.valueOf(dateStr);
 
-        String sql = "UPDATE Viewing SET view_date=? WHERE veiwing_id=?";
+        String sql = "UPDATE Viewing SET view_date=? WHERE viewing_id=?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setDate(1, newVDate);
         stmt.setInt(2, id);
 
         int rows = stmt.executeUpdate();
         if (rows > 0) {
-            System.out.println("Viewing Date updated!");
+            System.out.println("🥂 Viewing Date updated!");
         } else {
-            System.out.println("Viewing ID not found!");
+            System.out.println("🤡 Viewing ID not found!");
         }
     }
 
     // Delete a viewing
-    public void deleteViewing() throws SQLException {
+    public void delete() throws SQLException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Viewing ID to delete:");
         int id = sc.nextInt();
@@ -78,28 +79,28 @@ public class ViewingsDAO {
 
         int rows = stmt.executeUpdate();
         if (rows > 0) {
-            System.out.println("Viewing deleted!");
+            System.out.println("🥂 Viewing deleted!");
         } else {
-            System.out.println("Viewing ID not found!");
+            System.out.println("🤡 Viewing ID not found!");
         }
     }
 
-    // List all viewings - may need to format this a little better.
-    public void listAllViewings() throws SQLException {
+    // List all viewings
+    public void list() throws SQLException {
         String sql = "SELECT * FROM Viewing";
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
 
-        System.out.println("\n All Viewings:");
-        System.out.println("Viewing ID | Home ID | Agent ID | Seller ID | Client ID | Date of Viewing (YY-MM-DD)");
+        System.out.println("\n⚠️ All Viewings:");
+        System.out.println("Viewing ID | Home ID | Agent ID | Seller ID | Client ID | View Date");
         while (rs.next()) {
             System.out.println(
                     rs.getInt("viewing_id") + " | " +
-                            rs.getString("home_id") + " | " +
-                            rs.getInt("agent_id") + " | " +
-                            rs.getInt("seller_id") + " | " +
-                            rs.getInt("client_id") + " | " +
-                            rs.getDate("view_date") + " | "
+                    rs.getInt("home_id") + " | " +
+                    rs.getInt("agent_id") + " | " +
+                    rs.getInt("seller_id") + " | " +
+                    rs.getInt("client_id") + " | " +
+                    rs.getDate("view_date")
             );
         }
     }

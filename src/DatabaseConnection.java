@@ -18,7 +18,7 @@ public class DatabaseConnection {
 
         String url = "jdbc:mysql://localhost:3306/HomeBaseDB";
         String user = "root";
-        String password = "xxxxxx";  // <== change it for your‘s
+        String password = "Print1564@";  // <== change it for your‘s
 
         return DriverManager.getConnection(url, user, password);
     }
