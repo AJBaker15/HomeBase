@@ -78,6 +78,42 @@ e) Using the App
 - Follow the on-screen menu.
 - You can Add, Update, Delete, and List Sellers, Agents, and Homes.
 - The menu loops back after every action.
+-------------------------
+1) Manage Homes
+2) Manage Sellers
+3) Manage Viewings
+4) Exit
+   Enter choice:
+
+-------------------------
+Manage Homes Workflow:
+
+1) Add Home
+2) Update Home Price
+3) Delete Home
+4) List All Homes
+5) Back to Main Menu
+   Enter choice:
+
+-------------------------
+Manage Sellers Workflow:
+
+1) Add Seller
+2) Update Seller
+3) Delete Seller
+4) List All Sellers
+5) Back to Main Menu
+   Enter choice:
+-------------------------
+Manage Viewings Workflow:
+
+1) Add Viewing
+2) Update Viewing Date
+3) Delete Viewing
+4) List All Viewings
+5) Back to Main Menu
+   Enter choice:
+-------------------------
 
 ========================================
 5. Video URL
