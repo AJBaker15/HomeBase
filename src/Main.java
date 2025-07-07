@@ -3,7 +3,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try (Connection conn = DatabaseConnection.getConnection()) {
+    	
+    	if (args.length != 3) {
+    		System.out.println("Please use the following format for invoking:");
+    		System.out.println("java -cp \".;../lib/*\" Main {databaseconnectionurl} {username} {password}");
+    		System.exit(1);
+    	}
+        try (Connection conn = DatabaseConnection.getConnection(args[0], args[1], args[2])) {
             Scanner sc = new Scanner(System.in);
 
             // Create DAO objects for each entity

@@ -44,9 +44,9 @@ CREATE TABLE Viewing (
     viewing_id VARCHAR(10) PRIMARY KEY,
     home_id VARCHAR(10),
     agent_id VARCHAR(20),
-    seller_id VARCHAR(20)
+    seller_id VARCHAR(20),
     client_id VARCHAR(10),
-    view_date DATE
+    view_date DATE,
     FOREIGN KEY (home_id) REFERENCES Home(home_id) ON DELETE CASCADE,
     FOREIGN KEY (agent_id) REFERENCES Agent(agent_id) ON DELETE CASCADE, 
     FOREIGN KEY (seller_id) REFERENCES Seller(seller_id) ON DELETE CASCADE,

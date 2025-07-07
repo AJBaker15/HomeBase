@@ -8,17 +8,13 @@ import java.sql.Statement;
 
 public class DatabaseConnection {
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection(String url, String user, String password) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("🤡 MySQL JDBC Driver not found!");
             e.printStackTrace();
         }
-
-        String url = "jdbc:mysql://localhost:3306/HomeBaseDB";
-        String user = "root";
-        String password = "Print1564@";  // <== change it for your‘s
 
         return DriverManager.getConnection(url, user, password);
     }

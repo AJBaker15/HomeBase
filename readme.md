@@ -68,10 +68,10 @@ javac -cp ".;../lib/*" *.java
 
 d) Run
 ------------------------
-MAC/Linux /🐧：java -cp ".:../lib/*" Main
+MAC/Linux /🐧：java -cp ".:../lib/*" Main {database url} {username} {password}
 
 (Windows users use ; instead of : )
-🪟：java -cp ".;../lib/*" Main
+🪟：java -cp ".;../lib/*" Main {database url} {username} {password}
 
 e) Using the App
 ------------------------
@@ -123,7 +123,8 @@ Manage Viewings Workflow:
 6. Additional Notes
 ----------------------------------------
 - Make sure MySQL Server is running.
-- The user/password in DatabaseConnection.java must match your local MySQL setup.
+- Please use the connection, username and password for your db connection. Example:
+    java -cp ".;../lib/*" Main "jdbc:mysql://localhost:3306/HomeBaseDB" "root" "root"
 - Use correct connector JAR path in lib/.
 
 ========================================
