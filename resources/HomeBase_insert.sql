@@ -22,11 +22,11 @@ INSERT INTO Client (client_id, name, address, phone_number, pref_property_type, 
 			(4, "Joshua Becker", "8587 E Shoreline Dr, Philidelphia PA, 19019", "5154568523", "single-family", "500000", 5, 5),
 			(5, "Julie Bloom", "15719 W Bell Rd, Surpise AZ, 85391", "6027894561", "single-family", 350000, 3, 2);
 			
-INSERT INTO Viewing (viewing_id, home_id, agent_id, client_id, view_date)
-	Values (1, 2, 1, 2, "2025-07-25"),
-			(2, 2, 2, 5, "2025-07-13"),
-			(3, 1, 1, 1, "2025-07-20"),
-			(4, 1, 3, 4, "2025-07-20"),
-			(5, 1, 3, 5, "2025-07-20"),
-			(6, 3, 2, 3, "2025-06-30");
+INSERT INTO Viewing (viewing_id, home_id, agent_id, seller_id, client_id, view_date)
+	Values (1, 2, 1, 1,  2, "2025-07-25"),
+			(2, 2, 2, 1, 5, "2025-07-13"),
+			(3, 1, 1, 3, 1, "2025-07-20"),
+			(4, 1, 3, 3, 4, "2025-07-20"),
+			(5, 1, 3, 3, 5, "2025-07-20"),
+			(6, 3, 2, 4, 3, "2025-06-30");
 			
