@@ -74,58 +74,21 @@ MAC/Linux /🐧：java -cp ".:../lib/*" Main {database url} {username} {passw
 🪟：java -cp ".;../lib/*" Main {database url} {username} {password}
 
 e) Using the App
-------------------------
 - Follow the on-screen menu.
 - You can Add, Update, Delete, and List Sellers, Agents, and Homes.
 - The menu loops back after every action.
--------------------------
-1) Manage Homes
-2) Manage Sellers
-3) Manage Viewings
-4) Exit
-   Enter choice:
-
--------------------------
-Manage Homes Workflow:
-
-1) Add Home
-2) Update Home Price
-3) Delete Home
-4) List All Homes
-5) Back to Main Menu
-   Enter choice:
-
--------------------------
-Manage Sellers Workflow:
-
-1) Add Seller
-2) Update Seller
-3) Delete Seller
-4) List All Sellers
-5) Back to Main Menu
-   Enter choice:
--------------------------
-Manage Viewings Workflow:
-
-1) Add Viewing
-2) Update Viewing Date
-3) Delete Viewing
-4) List All Viewings
-5) Back to Main Menu
-   Enter choice:
--------------------------
 
 ========================================
 5. Video URL
 ----------------------------------------
-
+https://youtu.be/xEI7zY1R68I
 ========================================
 6. Additional Notes
 ----------------------------------------
 - Make sure MySQL Server is running.
 - Please use the connection, username and password for your db connection. Example:
-    java -cp ".;../lib/*" Main "jdbc:mysql://localhost:3306/HomeBaseDB" "root" "root"
-- Use correct connector JAR path in lib/.
+    java - cp ".;../lib/*" Main "jdbc:mysql://localhost:3306/HomeBaseDB" "root" "root"
+- Use correct connector JARpath in lib/.
 
 ========================================
 7. Team Members and Contributions
